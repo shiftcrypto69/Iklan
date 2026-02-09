@@ -5,33 +5,29 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #1a1c2c; 
+    background-color: #000; /* Hitam pekat untuk TV */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    overflow: hidden; /* Elakkan scrollbar pada skrin TV */
+    overflow: hidden;
 }
 
-/* Container Utama (Canvas) */
+/* Container Utama */
 .canvas {
     position: relative;
-    width: 95%; 
-    max-width: 900px; /* Diperlebarkan sedikit untuk kesesuaian TV */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    width: 98%; 
+    max-width: 1100px; /* Dioptimumkan untuk TV 43" */
+    box-shadow: 0 0 50px rgba(0,0,0,1);
     line-height: 0;
+    border-radius: 10px;
     overflow: hidden;
-    border-radius: 15px; 
-    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Lapisan Imej Latar Belakang */
 .poster-img {
     width: 100%;
     height: auto;
     display: block;
-    user-select: none;
 }
 
-/* Lapisan Kandungan (Overlay) */
+/* Lapisan Kandungan */
 .content-overlay {
     position: absolute;
     top: 0;
@@ -42,76 +38,42 @@ body {
     pointer-events: none;
 }
 
-/* Gaya Teks Metadata Umum */
-.text-item {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    color: #ffffff;
-    text-shadow: 3px 3px 15px rgba(0,0,0,1);
-    pointer-events: auto;
-}
-
-/* Tajuk Program */
-.title {
-    top: 8%;
-    font-size: clamp(2rem, 8vw, 3.5rem);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: #ffeb3b;
-}
-
-/* Info Tarikh & Lokasi */
-.info {
-    top: 35%;
-    font-size: 1.5rem;
-    font-weight: 600;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px 0;
-    backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-/* QR Section - Dioptimumkan untuk Scan Jarak Jauh */
+/* QR Section - Kanan Bawah */
 .qr-section {
     position: absolute;
     bottom: 5%;
     right: 5%;
     background: white;
     padding: 15px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
     text-align: center;
     pointer-events: auto;
-    transition: transform 0.3s ease;
+    animation: floating 3s ease-in-out infinite;
 }
 
 .qr-code {
-    width: 200px; /* Saiz besar untuk TV 43" */
+    width: 200px; /* Saiz besar untuk jarak jauh */
     height: 200px;
     display: block;
 }
 
 .qr-label {
-    color: #1a1c2c;
+    color: #000;
     font-weight: 900;
     margin-top: 10px;
-    font-size: 1.1rem;
-    text-shadow: none;
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 
-/* Countdown Timer Styling - Kedudukan Kiri Bawah */
+/* Countdown Timer - Kiri Bawah */
 #countdown-timer {
+    position: absolute;
     bottom: 5%;
     left: 5%;
-    width: auto;
-    text-align: left;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.75);
     padding: 15px 25px;
-    border-radius: 15px;
+    border-radius: 12px;
     border-left: 6px solid #00ff00;
     backdrop-filter: blur(5px);
 }
@@ -121,29 +83,20 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #00ff00;
+    color: #ffffff;
     margin-top: 5px;
-    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
-/* Penyelarasan untuk Skrin Lebih Kecil/Tablet */
-@media (max-width: 768px) {
-    .qr-code {
-        width: 150px;
-        height: 150px;
-    }
-    .title { font-size: 2rem; }
-    .info { font-size: 1.1rem; }
-    #time { font-size: 1.8rem; }
-}
-
-/* Animasi Halus untuk QR (Menarik Perhatian) */
-.qr-section {
-    animation: floating 3s ease-in-out infinite;
-}
-
+/* Animasi QR */
 @keyframes floating {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
+}
+
+/* Tablet / Kecil */
+@media (max-width: 768px) {
+    .qr-code { width: 140px; height: 140px; }
+    #time { font-size: 1.8rem; }
 }
