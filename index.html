@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daurah Remaja Quranic 2026 - Precision Edition</title>
+    <title>Daurah Remaja Quranic 2026 - Perfect Edition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -31,14 +31,14 @@
             height: 560px;
             background: white; 
             position: relative;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.3);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.4);
             border: 12px solid white;
             overflow: hidden;
         }
 
         .hero-section {
             height: 62%;
-            background: linear-gradient(135deg, var(--soft-cyan) 0%, #B2EBF2 100%);
+            background: linear-gradient(135deg, #7ED9F7 0%, #B2EBF2 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -47,13 +47,12 @@
             z-index: 1;
         }
 
-        /* Corak grid latar belakang yang lebih halus */
         .hero-section::after {
             content: "";
             position: absolute;
             inset: 0;
             background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-            opacity: 0.15;
+            opacity: 0.12;
             z-index: -1;
         }
 
@@ -63,59 +62,60 @@
             justify-content: center;
             position: relative;
             width: 100%;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
-        /* PERUBAHAN: Teks Daurah Remaja dibuat lebih mampat dan rapat */
+        /* PERBAIKAN: Lebih mampat dan rapat ke Quranic */
         .side-text-daurah {
             font-family: 'Archivo Black', sans-serif;
             color: var(--dark-navy);
-            font-size: 38px;
-            line-height: 0.78; /* Sangat rapat */
+            font-size: 42px;
+            line-height: 0.75;
             text-transform: uppercase;
             text-align: right;
             z-index: 1;
-            letter-spacing: -2px;
-            transform: scaleX(0.85); /* Memampatkan teks secara mendatar */
+            letter-spacing: -3px;
+            transform: scaleX(0.8);
             transform-origin: right;
+            margin-right: -10px; /* Tarik masuk ke bawah Q */
         }
 
-        /* PERUBAHAN: Quranic lebih condong dan bayang lebih deep */
+        /* PERBAIKAN: Bayang 3 lapis untuk kesan 'Pop' */
         .main-script-quranic {
             font-family: 'Yellowtail', cursive;
-            font-size: 175px;
+            font-size: 185px;
             color: var(--primary-blue);
             line-height: 1;
-            margin: 0 -55px; 
+            margin: 0 -65px; 
             z-index: 10;
-            transform: rotate(-7deg) skewX(-5deg); /* Lebih condong */
+            transform: rotate(-6deg);
             text-shadow: 
-                4px 4px 0px white, 
-                8px 8px 0px rgba(255,255,255,0.5),
-                15px 15px 30px rgba(0,0,0,0.2);
-            filter: drop-shadow(0px 4px 2px rgba(0,0,0,0.1));
+                3px 3px 0px white, 
+                6px 6px 0px rgba(30, 136, 229, 0.2),
+                12px 12px 25px rgba(0,0,0,0.2);
         }
 
-        /* PERUBAHAN: Tahun mampat */
+        /* PERBAIKAN: Selari dengan 'c' di Quranic */
         .year-text {
             font-family: 'Archivo Black', sans-serif;
-            font-size: 95px;
-            color: #333;
-            letter-spacing: -6px;
+            font-size: 105px;
+            color: #222;
+            letter-spacing: -8px;
             z-index: 1;
-            transform: scaleX(0.8);
+            transform: scaleX(0.75);
             transform-origin: left;
+            margin-left: -15px;
         }
 
         .badge-cta {
             position: absolute;
-            top: 30px;
-            right: 40px;
+            top: 25px;
+            right: 35px;
             background: var(--accent-red);
             color: white;
-            padding: 12px 25px;
-            transform: rotate(6deg);
-            box-shadow: 6px 6px 0px #880E4F;
+            padding: 10px 22px;
+            transform: rotate(8deg);
+            box-shadow: 5px 5px 0px #880E4F;
             text-align: center;
             z-index: 50;
         }
@@ -123,18 +123,18 @@
         .info-grid {
             height: 38%;
             display: grid;
-            grid-template-columns: 1.3fr 1.1fr 0.6fr;
-            padding: 25px 60px;
+            grid-template-columns: 1.2fr 1fr 0.8fr;
+            padding: 0 60px;
             align-items: center;
             background: white;
-            border-top: 6px solid var(--primary-blue);
+            border-top: 8px solid var(--primary-blue);
         }
 
         .footer-bar {
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 45px;
+            height: 40px;
             background: var(--dark-navy);
             display: flex;
             align-items: center;
@@ -153,21 +153,22 @@
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            font-size: 14px;
-            font-style: italic;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
 
     <div class="poster-canvas">
-        <div class="absolute top-8 left-10 w-24 z-20">
-            <div class="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center text-white text-[10px] font-bold text-center border-4 border-white shadow-lg">LOGO<br>MASJID</div>
+        <div class="absolute top-6 left-8 z-20">
+            <div class="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center text-white text-[11px] font-black text-center border-4 border-white shadow-xl">
+                LOGO<br>MASJID
+            </div>
         </div>
 
         <div class="badge-cta">
-            <div class="text-[11px] font-bold uppercase tracking-widest">Pendaftaran</div>
-            <div class="text-3xl font-black">KINI!</div>
+            <div class="text-[10px] font-bold uppercase tracking-widest leading-none">Pendaftaran</div>
+            <div class="text-4xl font-black italic">KINI!</div>
         </div>
 
         <div class="hero-section">
@@ -177,43 +178,43 @@
                 <div class="year-text">2026</div>
             </div>
             
-            <div class="mt-4 bg-white/40 backdrop-blur-md px-8 py-2 rounded-full border border-white/60 shadow-sm">
-                <p class="text-blue-900 font-bold text-sm tracking-widest uppercase">
+            <div class="mt-2 bg-white/50 backdrop-blur-sm px-10 py-2 rounded-full border border-white/80 shadow-sm">
+                <p class="text-blue-900 font-black text-xs tracking-[0.2em] uppercase">
                     Program Intensif Hafazan & Pemantapan Rohani Ramadan 1447H
                 </p>
             </div>
         </div>
 
         <div class="info-grid">
-            <div class="border-r-2 border-gray-100 pr-8">
-                <span class="text-[11px] text-gray-400 font-black uppercase tracking-widest">Lokasi Program</span>
-                <h2 class="text-2xl font-black text-[#0A2647] leading-tight mt-1">
+            <div class="border-r-2 border-gray-100 pr-4">
+                <span class="text-[10px] text-gray-400 font-black uppercase tracking-widest">Lokasi Program</span>
+                <h2 class="text-2xl font-black text-[#0A2647] leading-[1.1] mt-1">
                     MASJID KAMPUNG<br><span class="text-blue-600 uppercase">Sungai Lang Baru</span>
                 </h2>
             </div>
 
-            <div class="pl-8">
-                <span class="text-[11px] text-gray-400 font-black uppercase tracking-widest">Tarikh Tutup</span>
-                <p class="text-xl font-bold text-red-600 mt-1 uppercase">1 Ramadan 1447H</p>
+            <div class="px-8">
+                <span class="text-[10px] text-gray-400 font-black uppercase tracking-widest">Tarikh Tutup</span>
+                <p class="text-2xl font-black text-red-600 mt-1 uppercase">1 Ramadan 1447H</p>
                 <div class="mt-2 flex gap-2">
-                    <span class="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded">TADABBUR SAINS</span>
-                    <span class="bg-blue-100 text-blue-700 text-[10px] font-black px-2 py-1 rounded">TAHAP 1-5</span>
+                    <span class="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-md">TADABBUR SAINS</span>
+                    <span class="bg-blue-100 text-blue-800 text-[9px] font-black px-3 py-1 rounded-md">TAHAP 1-5</span>
                 </div>
             </div>
 
             <div class="flex justify-end">
-                <div class="bg-blue-50 border-2 border-dashed border-blue-400 p-2 rounded-xl text-center">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=DAFTAR" class="rounded bg-white p-1">
-                    <p class="text-[9px] font-black mt-2 text-blue-900 uppercase tracking-tighter">Imbas Untuk Daftar</p>
+                <div class="bg-white border-2 border-blue-500 p-2 rounded-2xl shadow-inner text-center">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=DAFTAR" class="rounded-lg">
+                    <p class="text-[10px] font-black mt-2 text-blue-900 uppercase">Daftar Sini</p>
                 </div>
             </div>
         </div>
 
         <div class="footer-bar">
-            <div class="footer-label">INFO</div>
+            <div class="footer-label italic uppercase">Info Lanjut</div>
             <div class="flex items-center gap-2 ml-4">
-                <i class="fab fa-facebook text-blue-400 text-lg"></i>
-                <span class="text-xs font-bold tracking-wider">@masjidkampungsungailangbaru</span>
+                <i class="fab fa-facebook text-blue-400"></i>
+                <span class="text-[11px] font-bold tracking-widest uppercase text-gray-200">@masjidkampungsungailangbaru</span>
             </div>
         </div>
     </div>
