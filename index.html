@@ -41,12 +41,43 @@
                 <span>MASJID TEMPATAN / LOKASI PROGRAM</span>
             </div>
 
-            <a href="#" class="text-item cta">DAFTAR SEKARANG</a>
+            <div id="countdown-timer" class="text-item" style="bottom: 25%; font-family: monospace; font-size: 1.5rem; color: #ffeb3b; width: 100%; text-align: center; line-height: normal; pointer-events: auto;">
+                Masa Berbaki: <br>
+                <span id="time" style="font-weight: bold; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 5px;">--:--:--:--</span>
+            </div>
+
+            <a href="#" class="text-item cta" style="bottom: 10%; position: absolute; left: 50%; transform: translateX(-50%);">DAFTAR SEKARANG</a>
         </div>
     </div>
 
     <script>
-        console.log("Poster Metadata Loaded Successfully.");
+        function startTimer() {
+            // Sasaran: 1 Mac 2026
+            const targetDate = new Date("March 1, 2026 08:00:00").getTime();
+            
+            const timerInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+                
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById("time").innerHTML = "PROGRAM BERMULA";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Paparan lebih lengkap: Hari, Jam, Minit, Saat
+                document.getElementById("time").innerHTML = 
+                    days + "h " + hours + "j " + minutes + "m " + seconds + "s";
+            }, 1000);
+        }
+
+        startTimer();
+        console.log("Poster Metadata & Countdown Loaded Successfully.");
     </script>
 
 </body>
